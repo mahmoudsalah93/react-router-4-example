@@ -22,15 +22,15 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <div className="menu">
-            <ul>
-              <li> <Link to="/">Home</Link> </li>
-              <li> <Link to="/messages">Messages</Link> </li>
-              <li> <Link to="/about">About</Link> </li>
-            </ul>
+          <ul>
+            <li> <Link to="/">Home</Link> </li>
+            <li> <Link to="/messages">Messages</Link> </li>
+            <li> <Link to="/about">About</Link> </li>
+          </ul>
         </div>
         <div className="App-intro">
           <Switch>
-            <Route exact path="/"  component={Home} />
+            <Route exact path="/" component={Home} />
             <Route path="/messages" component={Messages} />
             <Route path="/about" component={About} />
             <Redirect to="/" />
