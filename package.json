@@ -1,4 +1,9 @@
 {
+  "main": "build/index.js",
+  "module": "build/index.js",
+  "files": [
+    "build"
+  ],
   "name": "react-router-4-example",
   "version": "0.1.0",
   "private": true,
