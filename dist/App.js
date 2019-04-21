@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { Route, Link, Switch, Redirect, withRouter } from 'react-router-dom';
+import { Route, Link, Switch, Redirect, withRouter, BrowserRouter } from 'react-router-dom';
 
 import Home from './components/Home';
 import About from './components/About';
@@ -29,69 +29,73 @@ var App = function (_Component) {
     key: 'render',
     value: function render() {
       return React.createElement(
-        'div',
-        { className: 'App' },
-        React.createElement(
-          'header',
-          { className: 'App-header' },
-          React.createElement('img', { src: logo, className: 'App-logo', alt: 'logo' }),
-          React.createElement(
-            'h1',
-            { className: 'App-title' },
-            'Welcome to React'
-          )
-        ),
+        BrowserRouter,
+        null,
         React.createElement(
           'div',
-          { className: 'menu' },
+          { className: 'App' },
           React.createElement(
-            'ul',
-            null,
+            'header',
+            { className: 'App-header' },
+            React.createElement('img', { src: logo, className: 'App-logo', alt: 'logo' }),
             React.createElement(
-              'li',
-              null,
-              ' ',
-              React.createElement(
-                Link,
-                { to: '/' },
-                'Home'
-              ),
-              ' '
-            ),
-            React.createElement(
-              'li',
-              null,
-              ' ',
-              React.createElement(
-                Link,
-                { to: '/messages' },
-                'Messages'
-              ),
-              ' '
-            ),
-            React.createElement(
-              'li',
-              null,
-              ' ',
-              React.createElement(
-                Link,
-                { to: '/about' },
-                'About'
-              ),
-              ' '
+              'h1',
+              { className: 'App-title' },
+              'Welcome to React'
             )
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'App-intro' },
+          ),
           React.createElement(
-            Switch,
-            null,
-            React.createElement(Route, { exact: true, path: '/', component: Home }),
-            React.createElement(Route, { path: '/messages', component: Messages }),
-            React.createElement(Route, { path: '/about', component: About }),
-            React.createElement(Redirect, { to: '/' })
+            'div',
+            { className: 'menu' },
+            React.createElement(
+              'ul',
+              null,
+              React.createElement(
+                'li',
+                null,
+                ' ',
+                React.createElement(
+                  Link,
+                  { to: '/' },
+                  'Home'
+                ),
+                ' '
+              ),
+              React.createElement(
+                'li',
+                null,
+                ' ',
+                React.createElement(
+                  Link,
+                  { to: '/messages' },
+                  'Messages'
+                ),
+                ' '
+              ),
+              React.createElement(
+                'li',
+                null,
+                ' ',
+                React.createElement(
+                  Link,
+                  { to: '/about' },
+                  'About'
+                ),
+                ' '
+              )
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'App-intro' },
+            React.createElement(
+              Switch,
+              null,
+              React.createElement(Route, { exact: true, path: '/', component: Home }),
+              React.createElement(Route, { path: '/messages', component: Messages }),
+              React.createElement(Route, { path: '/about', component: About }),
+              React.createElement(Redirect, { to: '/' })
+            )
           )
         )
       );
