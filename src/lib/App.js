@@ -8,7 +8,7 @@ import {
   Switch,
   Redirect,
   withRouter,
-  BrowserRouter
+  HashRouter
 } from 'react-router-dom';
 
 import Home from './components/Home';
@@ -18,7 +18,7 @@ import Messages from './components/Messages';
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
@@ -40,7 +40,7 @@ class App extends Component {
             </Switch>
           </div>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }

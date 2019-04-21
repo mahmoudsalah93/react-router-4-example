@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { Route, Link, Switch, Redirect, withRouter, BrowserRouter } from 'react-router-dom';
+import { Route, Link, Switch, Redirect, withRouter, HashRouter } from 'react-router-dom';
 
 import Home from './components/Home';
 import About from './components/About';
@@ -29,7 +29,7 @@ var App = function (_Component) {
     key: 'render',
     value: function render() {
       return React.createElement(
-        BrowserRouter,
+        HashRouter,
         null,
         React.createElement(
           'div',
