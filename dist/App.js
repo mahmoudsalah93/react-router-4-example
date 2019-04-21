@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { Route, Link, Switch, Redirect } from 'react-router-dom';
+import { Route, Link, Switch, Redirect, withRouter } from 'react-router-dom';
 
 import Home from './components/Home';
 import About from './components/About';
