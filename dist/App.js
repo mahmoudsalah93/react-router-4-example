@@ -101,4 +101,4 @@ var App = function (_Component) {
   return App;
 }(Component);
 
-export default App;
+export default withRouter(App);
