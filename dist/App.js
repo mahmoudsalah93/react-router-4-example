@@ -30,7 +30,7 @@ var App = function (_Component) {
     value: function render() {
       return React.createElement(
         BrowserRouter,
-        { basename: '/operationsManager' },
+        { basename: '/#/operationsManager' },
         React.createElement(
           'div',
           { className: 'App' },

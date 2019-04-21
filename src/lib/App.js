@@ -17,7 +17,7 @@ import Messages from './components/Messages';
 class App extends Component {
   render() {
     return (
-      <BrowserRouter basename="/operationsManager">
+      <BrowserRouter basename="/#/operationsManager">
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
