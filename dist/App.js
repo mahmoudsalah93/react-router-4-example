@@ -10,7 +10,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { Route, RelativeLink, Switch, Redirect, BrowserRouter } from 'react-router-dom';
+import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
+
+import { RelativeLink } from 'react-router-relative-links';
 
 import Home from './components/Home';
 import About from './components/About';

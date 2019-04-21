@@ -4,11 +4,13 @@ import './App.css';
 
 import {
   Route,
-  RelativeLink,
   Switch,
   Redirect,
   BrowserRouter
 } from 'react-router-dom';
+
+import { RelativeLink } from 'react-router-relative-links';
+
 
 import Home from './components/Home';
 import About from './components/About';
