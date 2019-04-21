@@ -36,7 +36,7 @@ var App = function (_Component) {
           { className: 'App' },
           React.createElement(
             'header',
-            { className: 'App-header' },
+            { className: 'component-app-header' },
             React.createElement('img', { src: logo, className: 'App-logo', alt: 'logo' }),
             React.createElement(
               'h1',
