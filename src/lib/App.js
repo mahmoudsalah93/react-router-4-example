@@ -4,9 +4,10 @@ import './App.css';
 
 import {
   Route,
-  Link,
+  NavLink,
   Switch,
-  Redirect
+  Redirect,
+  BrowserRouter
 } from 'react-router-dom';
 
 import Home from './components/Home';
@@ -16,6 +17,7 @@ import Messages from './components/Messages';
 class App extends Component {
   render() {
     return (
+      <BrowserRouter>
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -23,9 +25,9 @@ class App extends Component {
         </header>
         <div className="menu">
           <ul>
-            <li> <Link to="/">Home</Link> </li>
-            <li> <Link to="/messages">Messages</Link> </li>
-            <li> <Link to="/about">About</Link> </li>
+            <li> <NavLink to="/">Home</NavLink> </li>
+            <li> <NavLink to="/messages">Messages</NavLink> </li>
+            <li> <NavLink to="/about">About</NavLink> </li>
           </ul>
         </div>
         <div className="App-intro">
@@ -37,6 +39,7 @@ class App extends Component {
           </Switch>
         </div>
       </div>
+      </BrowserRouter>
     );
   }
 }
