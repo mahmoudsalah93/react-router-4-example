@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { Route, Link, Switch, Redirect, withRouter, HashRouter } from 'react-router-dom';
+import { Route, RelativeLink, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 
 import Home from './components/Home';
 import About from './components/About';
@@ -29,7 +29,7 @@ var App = function (_Component) {
     key: 'render',
     value: function render() {
       return React.createElement(
-        HashRouter,
+        BrowserRouter,
         null,
         React.createElement(
           'div',
@@ -55,8 +55,8 @@ var App = function (_Component) {
                 null,
                 ' ',
                 React.createElement(
-                  Link,
-                  { to: '/' },
+                  RelativeLink,
+                  { to: './' },
                   'Home'
                 ),
                 ' '
@@ -66,8 +66,8 @@ var App = function (_Component) {
                 null,
                 ' ',
                 React.createElement(
-                  Link,
-                  { to: '/messages' },
+                  RelativeLink,
+                  { to: './messages' },
                   'Messages'
                 ),
                 ' '
@@ -77,8 +77,8 @@ var App = function (_Component) {
                 null,
                 ' ',
                 React.createElement(
-                  Link,
-                  { to: '/about' },
+                  RelativeLink,
+                  { to: './about' },
                   'About'
                 ),
                 ' '
@@ -91,9 +91,9 @@ var App = function (_Component) {
             React.createElement(
               Switch,
               null,
-              React.createElement(Route, { exact: true, path: '/', component: Home }),
-              React.createElement(Route, { path: '/messages', component: Messages }),
-              React.createElement(Route, { path: '/about', component: About }),
+              React.createElement(Route, { exact: true, path: match.path + '/', component: Home }),
+              React.createElement(Route, { path: match.path + '/messages', component: Messages }),
+              React.createElement(Route, { path: match.path + '/about', component: About }),
               React.createElement(Redirect, { to: '/' })
             )
           )
@@ -105,4 +105,4 @@ var App = function (_Component) {
   return App;
 }(Component);
 
-export default withRouter(App);
+export default App;
