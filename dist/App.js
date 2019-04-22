@@ -12,6 +12,8 @@ import './App.css';
 
 import { Route, NavLink, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 
+import { RelativeLink } from 'react-router-relative-links';
+
 import Home from './components/Home';
 import About from './components/About';
 import Messages from './components/Messages';
@@ -30,7 +32,7 @@ var App = function (_Component) {
     value: function render() {
       return React.createElement(
         BrowserRouter,
-        { basename: '/#/operationsManager' },
+        { basename: this.props.basename },
         React.createElement(
           'div',
           { className: 'App' },
