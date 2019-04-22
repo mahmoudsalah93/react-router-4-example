@@ -10,9 +10,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
-
-import { RelativeLink } from 'react-router-relative-links';
+import { Route, NavLink, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 
 import Home from './components/Home';
 import About from './components/About';
@@ -32,13 +30,13 @@ var App = function (_Component) {
     value: function render() {
       return React.createElement(
         BrowserRouter,
-        null,
+        { basename: '/#/operationsManager' },
         React.createElement(
           'div',
           { className: 'App' },
           React.createElement(
             'header',
-            { className: 'App-header' },
+            { className: 'component-app-header' },
             React.createElement('img', { src: logo, className: 'App-logo', alt: 'logo' }),
             React.createElement(
               'h1',
@@ -57,8 +55,8 @@ var App = function (_Component) {
                 null,
                 ' ',
                 React.createElement(
-                  RelativeLink,
-                  { to: './' },
+                  NavLink,
+                  { to: '/' },
                   'Home'
                 ),
                 ' '
@@ -68,8 +66,8 @@ var App = function (_Component) {
                 null,
                 ' ',
                 React.createElement(
-                  RelativeLink,
-                  { to: './messages' },
+                  NavLink,
+                  { to: '/messages' },
                   'Messages'
                 ),
                 ' '
@@ -79,8 +77,8 @@ var App = function (_Component) {
                 null,
                 ' ',
                 React.createElement(
-                  RelativeLink,
-                  { to: './about' },
+                  NavLink,
+                  { to: '/about' },
                   'About'
                 ),
                 ' '
@@ -93,9 +91,9 @@ var App = function (_Component) {
             React.createElement(
               Switch,
               null,
-              React.createElement(Route, { exact: true, path: match.path + '/', component: Home }),
-              React.createElement(Route, { path: match.path + '/messages', component: Messages }),
-              React.createElement(Route, { path: match.path + '/about', component: About }),
+              React.createElement(Route, { exact: true, path: '/', component: Home }),
+              React.createElement(Route, { path: '/messages', component: Messages }),
+              React.createElement(Route, { path: '/about', component: About }),
               React.createElement(Redirect, { to: '/' })
             )
           )

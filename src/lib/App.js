@@ -4,6 +4,7 @@ import './App.css';
 
 import {
   Route,
+  NavLink,
   Switch,
   Redirect,
   BrowserRouter
@@ -19,28 +20,28 @@ import Messages from './components/Messages';
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-          <div className="menu">
-            <ul>
-              <li> <RelativeLink to="./">Home</RelativeLink> </li>
-              <li> <RelativeLink to="./messages">Messages</RelativeLink> </li>
-              <li> <RelativeLink to="./about">About</RelativeLink> </li>
-            </ul>
-          </div>
-          <div className="App-intro">
-            <Switch>
-              <Route exact path={`${match.path}/`} component={Home} />
-              <Route path={`${match.path}/messages`} component={Messages} />
-              <Route path={`${match.path}/about`} component={About} />
-              <Redirect to="/" />
-            </Switch>
-          </div>
+      <BrowserRouter basename="/#/operationsManager">
+      <div className="App">
+        <header className="component-app-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <div className="menu">
+          <ul>
+            <li> <NavLink to="/">Home</NavLink> </li>
+            <li> <NavLink to="/messages">Messages</NavLink> </li>
+            <li> <NavLink to="/about">About</NavLink> </li>
+          </ul>
         </div>
+        <div className="App-intro">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/messages" component={Messages} />
+            <Route path="/about" component={About} />
+            <Redirect to="/" />
+          </Switch>
+        </div>
+      </div>
       </BrowserRouter>
     );
   }
