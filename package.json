@@ -8,8 +8,7 @@
   ],
   "version": "0.1.0",
   "dependencies": {
-    "react-router-dom": "4.2.2",
-    "react-router-relative-links": "^0.1.0"
+    "react-router-dom": "4.2.2"
   },
   "scripts": {
     "start": "react-scripts start",
