@@ -10,9 +10,6 @@ import {
   BrowserRouter
 } from 'react-router-dom';
 
-import { RelativeLink } from 'react-router-relative-links';
-
-
 import Home from './components/Home';
 import About from './components/About';
 import Messages from './components/Messages';
