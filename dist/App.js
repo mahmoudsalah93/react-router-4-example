@@ -15,14 +15,18 @@ import { Route, NavLink, Switch, Redirect, BrowserRouter } from 'react-router-do
 import Home from './components/Home';
 import About from './components/About';
 import Messages from './components/Messages';
+import { inject, observer } from "mobx-react/index";
 
 var App = function (_Component) {
   _inherits(App, _Component);
 
-  function App() {
+  function App(props) {
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+    props.uiStore.setPageTitle(_this.props.basename.split('/')[1]);
+    return _this;
   }
 
   _createClass(App, [{
@@ -105,4 +109,4 @@ var App = function (_Component) {
   return App;
 }(Component);
 
-export default App;
+export default App = inject('uiStore')(observer(App));

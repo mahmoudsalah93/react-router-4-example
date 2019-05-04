@@ -13,8 +13,15 @@ import {
 import Home from './components/Home';
 import About from './components/About';
 import Messages from './components/Messages';
+import { inject, observer } from "mobx-react/index";
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    props.uiStore.setPageTitle(this.props.basename.split('/')[1]);
+  }
+
   render() {
     return (
       <BrowserRouter basename={this.props.basename}>
@@ -44,4 +51,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App = inject('uiStore')(observer(App));
